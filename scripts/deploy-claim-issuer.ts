@@ -2,7 +2,7 @@ import {ethers} from "hardhat";
 
 async function main() {
   const [claimIssuerOwner] = await ethers.getSigners();
-
+  console.log('the claim issuer owner is:', claimIssuerOwner);
   const claimIssuer = await ethers.deployContract("ClaimIssuer", [claimIssuerOwner.address]);
 
   console.log(`Deploying Claim Issuer at ${claimIssuer.address} ...`);

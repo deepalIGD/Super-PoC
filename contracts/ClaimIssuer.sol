@@ -57,6 +57,7 @@ contract ClaimIssuer is IClaimIssuer, Identity {
         // Recover address of data signer
         address recovered = getRecoveredAddress(sig, prefixedHash);
 
+    
         // Take hash of recovered address
         bytes32 hashedAddr = keccak256(abi.encode(recovered));
 

@@ -1,6 +1,7 @@
 import {task} from "hardhat/config";
 import {TaskArguments} from "hardhat/types";
 
+
 task("add-claim", "Add a claim to an identity")
   .addParam("identity", "The address of the identity")
   .addParam("from", "A CLAIM key on the claim issuer")
@@ -13,7 +14,16 @@ task("add-claim", "Add a claim to an identity")
     const claim = JSON.parse(args.claim);
 
     console.log(claim);
+    
+    const pretx = await identity.isClaimValid(
+      "0x8464135c8F25Da09e49BC8782676a84730C318bC",
+      claim.topic,
+      claim.signature,
+      claim.data
+    );
 
+    console.log("check if claim is valid", pretx)
+   
     const tx = await identity.addClaim(
       claim.topic,
       claim.scheme,
@@ -26,6 +36,8 @@ task("add-claim", "Add a claim to an identity")
     console.log(`Add claim of topic ${claim.topic} on identity ${args.identity} tx: ${tx.hash}`);
 
     await tx.wait();
-
+    
     console.log(`Add claim of topic ${claim.topic} on identity ${args.identity} tx mined: ${tx.hash}`);
+    
+   
   });

@@ -320,6 +320,9 @@ contract Identity is Storage, IIdentity, Version {
         return true;
     }
 
+    /*function getAddress() public view returns(address){
+        return address(this);
+    }*/
     /**
     * @dev See {IERC735-addClaim}.
     * @notice Implementation of the addClaim function from the ERC-735 standard
@@ -355,12 +358,13 @@ contract Identity is Storage, IIdentity, Version {
     {
         if (_issuer != address(this)) {
             require(IClaimIssuer(_issuer).isClaimValid(IIdentity(address(this)), _topic, _signature, _data), "invalid claim");
+            
         }
 
         bytes32 claimId = keccak256(abi.encode(_issuer, _topic));
         _claims[claimId].topic = _topic;
         _claims[claimId].scheme = _scheme;
-        _claims[claimId].signature = _signature;
+        _claims[claimId].signature = _signature; 
         _claims[claimId].data = _data;
         _claims[claimId].uri = _uri;
 
@@ -503,13 +507,17 @@ contract Identity is Storage, IIdentity, Version {
      * @return claimValid true if the claim is valid, false otherwise
      */
     function isClaimValid(
-        IIdentity _identity,
+      IIdentity _identity,
         uint256 claimTopic,
         bytes memory sig,
         bytes memory data)
     public override virtual view returns (bool claimValid)
     {
+        //bytes32 dataHash = keccak256(abi.encode(_identity, claimTopic, data));
+        //there is an issue using address(this)
+        //try wrapping around IIdentity and see
         bytes32 dataHash = keccak256(abi.encode(_identity, claimTopic, data));
+
         // Use abi.encodePacked to concatenate the message prefix and the message to sign.
         bytes32 prefixedHash = keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", dataHash));
 
