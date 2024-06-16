@@ -9,7 +9,7 @@ async function recoverAddressFromSignature() {
         ethers.utils.keccak256(
             ethers.utils.defaultAbiCoder.encode(
                 ['address', 'uint256', 'bytes'],
-                ['0x8464135c8F25Da09e49BC8782676a84730C318bC', 1876049749 , '0x8f3e8b45fa62fc6abf12d73c4feef3c54f0404bea83c85f1159df7de9f8f1944']
+                ['0x5FbDB2315678afecb367f032d93F642f64180aa3', 1876049749 , '0x8f3e8b45fa62fc6abf12d73c4feef3c54f0404bea83c85f1159df7de9f8f1944']
             )
         )
     );

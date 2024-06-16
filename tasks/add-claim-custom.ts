@@ -13,6 +13,7 @@ async function main() {
     //priv key - 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
     const [deployer] = await ethers.getSigners();
         
+    //_identity, claimTopic, data
     claim.signature = await deployer.signMessage(ethers.utils.arrayify(ethers.utils.keccak256(ethers.utils.defaultAbiCoder.encode(['address', 'uint256', 'bytes'], [claim.issuer, claim.topic, claim.data]))));
 
     console.log(claim.signature);

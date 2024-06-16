@@ -16,13 +16,13 @@ task("add-claim", "Add a claim to an identity")
     console.log(claim);
     
     const pretx = await identity.isClaimValid(
-      "0x8464135c8F25Da09e49BC8782676a84730C318bC",
+      claim.issuer,
       claim.topic,
       claim.signature,
       claim.data
     );
 
-    console.log("check if claim is valid", pretx)
+    console.log("check if claim is valid before adding it:", pretx)
    
     const tx = await identity.addClaim(
       claim.topic,

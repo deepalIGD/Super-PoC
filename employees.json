@@ -1,0 +1,42 @@
+[
+    {
+      "ABN": 1,
+      "USI": "S1",
+      "Family Name": "FName1",
+      "Given Name": "LName1",
+      "DOB": "1992/1",
+      "Address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
+    },
+    {
+      "ABN": 2,
+      "USI": "S2",
+      "Family Name": "FName2",
+      "Given Name": "LName2",
+      "DOB": "1992/2",
+      "Address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9"
+    },
+    {
+      "ABN": 3,
+      "USI": "S3",
+      "Family Name": "FName3",
+      "Given Name": "LName3",
+      "DOB": "1992/3",
+      "Address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955"
+    },
+    {
+      "ABN": 4,
+      "USI": "S4",
+      "Family Name": "FName4",
+      "Given Name": "LName4",
+      "DOB": "1992/4",
+      "Address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f"
+    },
+    {
+      "ABN": 5,
+      "USI": "S5",
+      "Family Name": "FName5",
+      "Given Name": "LName5",
+      "DOB": "1992/5",
+      "Address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720"
+    }
+]

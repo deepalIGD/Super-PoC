@@ -89,3 +89,8 @@ npx hardhat run .\scripts\signature-verify.ts --network localhost
 ```
 npx hardhat add-claim --identity <identity-contract-address> --from <address-of-key-added-to-claim-issuer> --claim '{\"topic\": \"1876049749\", \"scheme\": \"1\", \"issuer\": \"<claim-issuer-contract-address>\", \"data\": \"0x8f3e8b45fa62fc6abf12d73c4feef3c54f0404bea83c85f1159df7de9f8f1944\", \"signature\": \"<input signature here>\", \"uri\": \"https://ipfs.moralis.io:2053/ipfs/QmWTqnY1TvKgmaKCjjaQFNejwfoNJRrYkKt7iaj22SxJNL/hashedEmployeedetails.json\"}' --network localhost
 ```
+
+# Super PoC
+```
+bash runSuper.sh
+```
